@@ -1,0 +1,70 @@
+Problem 1: Temperature Alert
+
+Core Logic: Sliding Window
+
+We continuously monitor temperature readings to detect alerts.
+Maintain a sliding window of recent readings. As new data arrives, remove the oldest value and include the new one.
+Check conditions (like threshold exceed) inside the window instead of rechecking the entire data each time.
+This reduces time complexity and ensures real-time alert detection efficiently.
+
+Implementation Idea:
+Use two pointers to manage the window. Update the window sum or condition while sliding forward.
+
+Problem 2: Emergency Evacuation
+
+Core Logic: Greedy + Two Pointers
+
+Each boat can carry at most two people with a weight limit.
+Sort the array of weights.
+Pair the lightest and heaviest person together if possible. Otherwise, send the heaviest alone.
+This greedy approach minimizes the number of boats used.
+
+Implementation Idea:
+Sort weights, use left and right pointers, and count boats while moving pointers inward.
+
+Problem 3: Broadcast Network Feed
+
+Core Logic: Simulation with Sets and Lists
+
+Maintain subscriptions using sets for fast lookup.
+Store all messages with sender and timestamp.
+When a feed is requested, scan recent messages and include only those sent by the user or subscribed users.
+Show only the latest messages based on time and priority rules.
+
+Implementation Idea:
+Use sets for subscriptions, lists for messages, and iterate backward to collect the latest visible messages.
+
+Problem 4: Scrambled Keyword Detection
+
+Core Logic: Sliding Window + Frequency Count
+
+We check if any anagram of pattern p exists in string s.
+Use a sliding window of size equal to p.
+Compare frequency of characters in the window with frequency of p.
+If they match, record the starting index.
+
+Implementation Idea:
+Use two frequency arrays (size 26). Slide window by adding one character and removing one.
+
+Problem 5: Longest Mirrored Phase
+
+Core Logic: Dynamic Programming (Longest Palindromic Subsequence)
+
+A mirrored phase means a palindromic subsequence.
+If first and last characters match, they contribute to the length.
+If they don’t match, try excluding one end and take the maximum result.
+Store results in a 2D table to avoid recomputation.
+
+Implementation Idea:
+Use DP table where dp[i][j] stores the longest mirrored length from index i to j.
+
+Problem 6: Suspicious Device Detection
+
+Core Logic: Frequency Counting
+
+The array contains one identifier repeated n times while others appear once.
+Count frequency of each identifier.
+The one whose frequency equals half the array length is the suspicious device.
+
+Implementation Idea:
+Use a hash map to count occurrences and return the value with frequency = len/2.
